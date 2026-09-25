@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Contraseñas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">Seguridad digital</span>
+                <h1>Gestor de contraseñas</h1>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn btn-secondary btn-glass" onclick="consulta_general()">
+                    🔄 Actualizar
+                </button>
+                <button class="btn btn-primary btn-glow" onclick="location.href='add.html'">
+                    ＋ Agregar
+                </button>
+            </div>
+        </header>
+
+        <main class="content-wrap">
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total</span>
+                    <strong id="total-registros">0</strong>
+                </div>
+                <div class="stat-card accent">
+                    <span class="stat-label">Protegidas</span>
+                    <strong>100%</strong>
+                </div>
+                <div class="stat-card success">
+                    <span class="stat-label">Estado</span>
+                    <strong>Activo</strong>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="subheading">Baúl de credenciales</p>
+                        <h2>Mis cuentas</h2>
+                    </div>
+                    <button class="btn btn-primary" onclick="location.href='add.html'">
+                        ＋ Nuevo registro
+                    </button>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Plataforma</th>
+                                <th>Usuario</th>
+                                <th>Contraseña</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        consulta_general();
+    </script>
+</body>
+</html>
